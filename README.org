@@ -1,0 +1,26 @@
+#+OPTIONS: ^:{} toc:nil H:3
+* fastdef (v0.1.0)
+Insert terminology from Google top search results
+
+Screenshot:
+
+[[https://raw.github.com/redguardtoo/fastdef/master/screenshot-nq8.png]]
+* Install
+Place [[https://raw.githubusercontent.com/redguardtoo/fastdef/master/fastdef.el][fastdef.el]] on your =load-path=, and add this to your configuration:
+
+#+begin_src elisp
+(autoload 'fastdef-insert "fastdef" nil t)
+(autoload 'fastdef-insert-from-history "fastdef" nil t)
+#+end_src
+
+You also need install [[http://w3m.sourceforge.net][w3m]] which is "text-based web browser as well as a pager like `more' or `less'"
+* Usage
+=M-x fastdef-insert= to insert terminology from Google.
+
+=M-x fastdef-insert-from-history= to re-use previous results.
+
+=fastdef-text-template= decides the format of inserted content.
+
+Change =fastdef-search-engine= and =fastdef-regexp-extract-url= to switch search engine.
+* Contact
+Report bug at [[https://github.com/redguardtoo/fastdef]].
