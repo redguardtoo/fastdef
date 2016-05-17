@@ -8,7 +8,7 @@ Screenshot:
 * Install
 This program requires two emacs packages from [[https://melpa.org/][melpa]],
 - [[http://melpa.org/#/w3m][w3m]]
-- [[http://melpa.org/#/swiper][swiper]]
+- [[http://melpa.org/#/ivy][ivy]]
 
 Place [[https://raw.githubusercontent.com/redguardtoo/fastdef/master/fastdef.el][fastdef.el]] on your =load-path=, and add this to your configuration:
 

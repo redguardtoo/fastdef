@@ -6,7 +6,7 @@
 ;; Keywords: terminology org-mode markdown
 ;; Author: Chen Bin <chenin DOT sh AT gmail DOT com>
 ;; URL: http://github.com/redguardtoo/fastdef
-;; Package-Requires: ((swiper "0.7.0") (w3m "0.0"))
+;; Package-Requires: ((ivy "0.7.0") (w3m "0.0"))
 
 ;; This file is not part of GNU Emacs.
 
@@ -32,7 +32,7 @@
 ;; It requires w3m (http://w3m.sourceforge.net/).
 ;; It also requires two emacs packages from https://melpa.org/,
 ;;  - w3m (http://melpa.org/#/w3m)
-;;  - swiper (http://melpa.org/#/swiper)
+;;  - ivy (http://melpa.org/#/ivy)
 ;;
 ;; Usage,
 ;; `M-x fastdef-insert' to insert terminology from Google.
