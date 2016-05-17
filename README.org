@@ -6,6 +6,10 @@ Screenshot:
 
 [[https://raw.github.com/redguardtoo/fastdef/master/screenshot-nq8.png]]
 * Install
+This program requires two emacs packages from [[https://melpa.org/][melpa]],
+- [[http://melpa.org/#/w3m][w3m]]
+- [[http://melpa.org/#/swiper][swiper]]
+
 Place [[https://raw.githubusercontent.com/redguardtoo/fastdef/master/fastdef.el][fastdef.el]] on your =load-path=, and add this to your configuration:
 
 #+begin_src elisp
