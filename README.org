@@ -1,5 +1,5 @@
 #+OPTIONS: ^:{} toc:nil H:3
-* fastdef (v0.1.0)
+* fastdef (v0.1.1)
 Insert terminology from Google top search results
 
 Screenshot:
