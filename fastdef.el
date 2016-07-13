@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2016 Chen Bin
 ;;
-;; Version: 0.1.1
+;; Version: 0.2.0
 ;; Keywords: terminology org-mode markdown
 ;; Author: Chen Bin <chenin DOT sh AT gmail DOT com>
 ;; URL: http://github.com/redguardtoo/fastdef
@@ -101,6 +101,16 @@ Search engine place it in URL parameter.")
       (setq rlt (buffer-substring b e)))
     rlt))
 
+(defun fastdef--insert-string (str)
+  ;; work around evil issue
+  (if (and (functionp 'evil-normal-state-p)
+           (functionp 'evil-move-cursor-back)
+           (evil-normal-state-p)
+           (not (eolp))
+           (not (eobp)))
+      (forward-char))
+  (insert str))
+
 (defun fastdef-w3m-fontify-after-hook-setup ()
   "Hookup after w3m buffer is fully rendered."
   (when fastdef-keyword
@@ -147,7 +157,7 @@ Search engine place it in URL parameter.")
                               ;; actually insert content
                               (when fastdef-original-buffer
                                 (with-current-buffer fastdef-original-buffer
-                                  (insert rlt))))))
+                                  (fastdef--insert-string rlt))))))
         ;; done
         (setq fastdef-keyword nil)))))
 
@@ -178,7 +188,8 @@ Search engine place it in URL parameter.")
                           (let (rlt)
                             (setq rlt (replace-regexp-in-string "%%url" (cadr item) fastdef-text-template))
                             (setq rlt (replace-regexp-in-string "%%term" (car item) rlt))
-                            (insert rlt))))
+                            ;; work around evil-mode issue
+                            (fastdef--insert-string rlt))))
     (message "terminology history is empty!")))
 
 (provide 'fastdef)
